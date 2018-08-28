@@ -42,7 +42,13 @@ function create360Viewer (opt) {
     damping: defined(opt.damping, 0.35),
     zoom: false,
     pinch: false,
-    distance: 0
+    distance: 0,    
+    position: opt.position,
+    zoomSpeed: defined(opt.zoomSpeed, 0.0075),
+    pinchSpeed: defined(opt.pinchSpeed, 0.0075),
+    phiBounds: opt.phiBounds || [0, Math.PI],
+    thetaBounds: opt.thetaBounds || [-Infinity, Infinity],
+    distanceBounds: opt.distanceBounds || [0, Infinity]
   }));
 
   // settings for gl.clear
